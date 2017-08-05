@@ -15,6 +15,7 @@ install:
         rm -rf csources
         bin/nim c koch
         ./koch boot -d:release
+        ./koch nimble
         cd ..
       fi
 
