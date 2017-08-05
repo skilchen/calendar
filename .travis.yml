@@ -15,7 +15,7 @@ install:
         rm -rf csources
         bin/nim c koch
         ./koch boot -d:release
-        ./koch nimble
+        ./koch nimble 
         cd ..
       fi
 
@@ -24,7 +24,7 @@ before_script:
   - set -e
   - set -x
   - export PATH=`pwd`/nim-0.17.0/bin:$PATH
-  - nimble install nimcalcal
+  - nimble install nimcalcal -y
 
 script:
   - nim c -r calendar.nim
