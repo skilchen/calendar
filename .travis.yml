@@ -6,20 +6,33 @@ language: c
 
 install:
   - |
-      wget https://nim-lang.org/download/nim-0.17.0.tar.xz
-      tar -xf nim-0.17.0.tar.xz
-      cd nim-0.17.0
-      sh build.sh
-      cd ..
+      if [ ! -x nim-0.17.0/bin/nim ]
+      then
+        wget https://nim-lang.org/download/nim-0.17.0.tar.xz
+        tar -xf nim-0.17.0.tar.xz
+        cd nim-0.17.0
+        sh build.sh
+        cd ..
+        rm -rf csources
+        bin/nim c koch
+        ./koch boot -d:release
+        cd ..
+      fi
+
 
 before_script:
   - set -e
   - set -x
   - export PATH=`pwd`/nim-0.17.0/bin:$PATH
+  - nimble install nimcalcal
 
 script:
   - nim c -r calendar.nim
   - nim js -d:nodejs --threads:off -r calendar.nim
+
+cache:
+  directories:
+    - nim-0.17.0
 
 notifications:
   email: "skilchen@bluewin.ch"
