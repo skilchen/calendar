@@ -1,0 +1,36 @@
+body {font-family: sans-serif;}
+
+table.year {
+	background-color: #A0CCDD;
+	border-spacing: 1px;
+	border-collapse: collapse;
+	border: 0px solid black;
+	empty-cells: hide;
+	padding: 1pt 1pt 1pt 1pt;
+}
+
+td.sat, td.sun  {background-color: #AADDFF;}
+
+tr.year, td.year {
+	border: 4px dotted white;
+	border-top: 2px solid green;	
+	border-bottom: 1px solid green;
+	border-left: 1px solid green;
+	border-right: 1px solid green;
+}
+
+th.year {
+	font-size: 200%;
+}
+
+th.month {
+	font-size: 150%;
+}
+
+
+th.month {background-color: #00B0FF; color: #111111;}
+
+.noday, .month, .week {background-color: #A0CCDD;}
+
+#td.mon {background-color: #00C0FA; color: #FF1010; text-align: right;}
+

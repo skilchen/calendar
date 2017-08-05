@@ -1,0 +1,10 @@
+body {font-family: sans-serif;}
+table {background-color: #DDCCAA;}
+.sat, .sun  {background-color: #AADDFF;}
+.noday {background-color: #FFFFFF;}
+th.month {background-color: #C3F3A3;}
+th.year {font-size: +2em;}
+table, .noday, .month, .week {background-color: lightgray;}
+table.year {border: 0; width: 100%;}
+table.month {width: 100%;}
+
