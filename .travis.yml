@@ -12,7 +12,6 @@ install:
         tar -xf nim-0.17.0.tar.xz
         cd nim-0.17.0
         sh build.sh
-        cd ..
         rm -rf csources
         bin/nim c koch
         ./koch boot -d:release
