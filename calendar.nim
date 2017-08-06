@@ -376,7 +376,7 @@ proc yeardays2calendar*(cal: Calendar, year: int, width: int =3): yearWeekDayDat
         months.add(cal.monthdays2calendar(year, i))
     result = @[]
     for i in countUp(0, len(months) - 1, width):
-      result.add(months[i..i+width-1])
+      result.add(months[i..min(i+width-1, high(months))])
     return result
 
 
