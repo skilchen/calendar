@@ -394,7 +394,7 @@ proc yeardays2calendar_iso*(cal: Calendar, year: int, width: int =3): yearISOWee
         months.add(cal.monthdays2calendar_iso(year, i))
     result = @[]
     for i in countUp(0, len(months) - 1, width):
-      result.add(months[i..i+width-1])
+      result.add(months[i..min(i+width-1, high(months))])
     return result
 
 
